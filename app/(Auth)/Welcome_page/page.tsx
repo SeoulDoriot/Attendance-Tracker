@@ -11,7 +11,8 @@ function FeatureCard({
   icon: React.ReactNode;
 }) {
   return (
-      <div className="w-[220px] rounded-2xl border border-zinc-200 bg-white px-4 py-4 shadow-sm">      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+    <div className="w-[220px] rounded-2xl border border-zinc-200 bg-white px-4 py-4 shadow-sm">
+      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-blue-600">
         {icon}
       </div>
 
@@ -87,7 +88,7 @@ function IconReport() {
 export default function WelcomePage() {
   return (
     <div className="min-h-screen bg-[#fbfbfb]">
-      <div className="mx-auto max-w-[1200px] px-10 py-8">
+      <div className="mx-auto  px-21 py-8">
         {/* Top logo */}
         <div className="flex items-start">
           <Image
@@ -102,7 +103,7 @@ export default function WelcomePage() {
         {/* Main layout */}
         <div className="mt-10 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
           {/* Left side */}
-          <div>
+          <div className="w-full max-w-xl">
             <h1 className="text-[56px] leading-[1.05] font-normal text-zinc-900">
               Attendance Tracking
               <br />
@@ -117,7 +118,7 @@ export default function WelcomePage() {
             </p>
 
             {/* Buttons */}
-            <div className="mt-8 flex gap-5">
+            <div className="mt-8 flex gap-10">
               <Link
                 href="/Sign_up"
                 className="inline-flex h-12 w-36 items-center justify-center rounded-2xl bg-[#F4C9A6] text-sm font-semibold text-white shadow-sm"
@@ -134,7 +135,7 @@ export default function WelcomePage() {
             </div>
 
             {/* Feature cards */}
-            <div className="mt-13 grid grid-cols-1 gap-50 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-50 sm:grid-cols-2 lg:grid-cols-3">
               <FeatureCard
                 title="Join new class"
                 desc="Students check in automatically when they enter the class boundary"
@@ -154,18 +155,20 @@ export default function WelcomePage() {
           </div>
 
           {/* Right side (image + circle bg) */}
-          <div className="relative hidden lg:flex items-center justify-end">
-<div className="pointer-events-none absolute -right-[220px] -bottom-[220px] -z-10 h-[660px] w-[360px] rounded-full bg-[#F7E7D7]" />            <div className="relative z-10">
-              <Image
-                src="/student.png"
-                alt="Student"
-                width={360}
-                height={700}
-                className="object-contain"
-                priority
-              />
+          <div className="relative hidden lg:flex min-h-[700px] justify-end">
+            {/* Big circle background */}
+            <div className="absolute -right40 -bottom- h-[660px] w-[360px] rounded-full bg-[#F7E7D7]" />
+          
+              {/* Student image */}
+                <Image
+                  src="/student.png"
+                  alt="Student"
+                  width={520}
+                  height={760}
+                  className="relative z-10 object-contain"
+                  priority
+                  />
             </div>
-          </div>
         </div>
       </div>
     </div>
