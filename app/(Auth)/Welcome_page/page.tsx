@@ -88,7 +88,7 @@ function IconReport() {
 export default function WelcomePage() {
   return (
     <div className="min-h-screen bg-[#fbfbfb]">
-      <div className="mx-auto  px-21 py-8">
+      <div className="mx-17 max-w-6xl px-6 py-10 lg:px-8">
         {/* Top logo */}
         <div className="flex items-start">
           <Image
@@ -101,10 +101,10 @@ export default function WelcomePage() {
         </div>
 
         {/* Main layout */}
-        <div className="mt-10 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
+        <div className="mt-16 grid grid-cols-1 gap-15 lg:grid-cols-2 lg:items-center">
           {/* Left side */}
-          <div className="w-full max-w-xl">
-            <h1 className="text-[56px] leading-[1.05] font-normal text-zinc-900">
+          <div className="w-full max-w-xl flex flex-col justify-center">
+            <h1 className="text-5xl lg:text-6xl leading-tight font-normal text-zinc-900">
               Attendance Tracking
               <br />
               <span className="font-semibold text-[#2F52FF]">
@@ -112,13 +112,13 @@ export default function WelcomePage() {
               </span>
             </h1>
 
-            <p className="mt-6 max-w-md text-sm leading-6 text-zinc-500">
+            <p className="mt-6 max-w-lg text-base leading-7 text-zinc-500">
               Automatically track student attendance when they arrive at class.
               No manual check-ins required.
             </p>
 
             {/* Buttons */}
-            <div className="mt-8 flex gap-10">
+            <div className="mt-8 flex items-center gap-6">
               <Link
                 href="/Sign_up"
                 className="inline-flex h-12 w-36 items-center justify-center rounded-2xl bg-[#F4C9A6] text-sm font-semibold text-white shadow-sm"
@@ -135,7 +135,7 @@ export default function WelcomePage() {
             </div>
 
             {/* Feature cards */}
-            <div className="mt-10 grid grid-cols-1 gap-50 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid grid-cols-1 gap-50 sm:grid-cols-2 lg:grid-cols-3">
               <FeatureCard
                 title="Join new class"
                 desc="Students check in automatically when they enter the class boundary"
@@ -155,9 +155,9 @@ export default function WelcomePage() {
           </div>
 
           {/* Right side (image + circle bg) */}
-          <div className="relative hidden lg:flex min-h-[700px] justify-end">
+          <div className="relative hidden lg:flex min-h-[600px] items-center justify-end">
             {/* Big circle background */}
-            <div className="absolute -right40 -bottom- h-[660px] w-[360px] rounded-full bg-[#F7E7D7]" />
+            <div className="absolute -right-33 bottom-[-2] h-[620px] w-[380px] rounded-full bg-[#F7E7D7]" />
           
               {/* Student image */}
                 <Image
@@ -165,7 +165,7 @@ export default function WelcomePage() {
                   alt="Student"
                   width={520}
                   height={760}
-                  className="relative z-10 object-contain"
+                  className="relative z-10 object-contain -right-20 bottom-[-20] translate-y-6"
                   priority
                   />
             </div>

@@ -41,7 +41,7 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-[#fbfbfb]">
-      <div className="mx-auto max-w-[1200px] px-0 py-8">
+      <div className="mx-auto max-w-6xl px-0 py-10">
         <Image
           src="/kit-logo.png"
           alt="KIT"
@@ -50,9 +50,9 @@ export default function LoginPage() {
           priority
         />
 
-        <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center lg:gap-24">
-
-          <div className="mx-auto w-full max-w-md">
+        <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center lg:gap-40">
+          
+          <div className="mx-auto w-full max-w-md py-10">
             <h1 className="text-4xl font-bold text-zinc-900">
               Welcome Back !!
             </h1>
@@ -116,19 +116,21 @@ export default function LoginPage() {
                 Sign Up
               </Link>
             </p>
+
           </div>
 
         
-          <div className="relative hidden lg:flex min-h-[700px] justify-end">
+          <div className="relative hidden min-h-[700px] bottom-20 justify-end items-end lg:flex">
             {/* Big circle background (lower, like your design) */}
-            <div className="absolute -right40 -bottom- h-[660px] w-[360px] rounded-full bg-[#F7E7D7]" />
+            <div className="absolute -right-10 bottom-0 h-[600px] w-[380px] rounded-full bg-[#F7E7D7] -translate-y-6" />
+
 
             <Image
               src="/student.png"
               alt="Student"
               width={520}
               height={760}
-              className="relative z-10 object-contain"
+              className="relative z-10 object-contain -translate-y-6 right-6"
               priority
             />
           </div>

@@ -37,7 +37,7 @@ function EyeOffIcon() {
 }
 
 export default function SignupPage() {
-  const [role, setRole] = useState<"student" | "teacher">("student");
+  const [role, setRole] = useState<"student" | "teacher" | "">("");
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -50,8 +50,8 @@ export default function SignupPage() {
     e.preventDefault();
     setErrorMsg(null);
 
-    if (!fullName.trim() || !email.trim() || !password || !repeatPassword) {
-      return setErrorMsg("Please fill all fields.");
+    if (!fullName.trim() || !email.trim() || !password || !repeatPassword || !role) {
+      return setErrorMsg("Please fill all fields and select a role.");
     }
 
     if (password !== repeatPassword) {
@@ -88,16 +88,16 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#fbfbfb]">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-0 py-8 lg:grid-cols-2">
+    <div className="min-h-screen bg-[#fbfbfb] flex items-center">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 py-8 lg:grid-cols-2 lg:items-center w-full">
         {/* KIT logo top-left */}
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 mb-4">
           <Image src="/kit-logo.png" alt="KIT" width={80} height={80} priority />
         </div>
 
         {/* Title */}
-        <div className="lg:col-span-2">
-          <h1 className="text-4xl font-semibold text-black">Registeration</h1>
+        <div className="lg:col-span-2 mb-2">
+          <h1 className="text-3xl font-semibold text-black">Registration</h1>
         </div>
 
         {/* Left: Form */}
@@ -161,7 +161,7 @@ export default function SignupPage() {
 
           {/* Checkbox row */}
           <label className="flex items-center gap-3 pt-1 text-xs text-zinc-700">
-            <input type="checkbox" className="h-4 w-4 accent-black" defaultChecked />
+            <input type="checkbox" className="h-4 w-4 accent-black" />
             <span>I accept the terms and privacy policy</span>
           </label>
 
@@ -195,10 +195,10 @@ export default function SignupPage() {
         </form>
 
         {/* Right: Image (cannot block clicks) */}
-        <div className="relative z-0 hidden w-full items-start justify-end md:flex -mt-14 pointer-events-none">
+        <div className="relative hidden lg:flex w-full justify-end items-center pointer-events-none">
           <div className="relative h-[520px] w-[520px]">
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[660px] w-[420px] rounded-full bg-[#F7E7D8]" />
-            <div className="absolute right-0 top-0">
+            <div className="absolute -right-10 bottom-10 h-[600px] w-[380px] rounded-full bg-[#F7E7D8]" />
+            <div className="absolute right-0 top-0" style={{ transform: "translateY(-40px)" }}>
               <Image
                 src="/student.png"
                 alt="student"
